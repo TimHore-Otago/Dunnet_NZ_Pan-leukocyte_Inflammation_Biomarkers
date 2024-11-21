@@ -3,9 +3,9 @@ This repository contains datasets (raw and processed) and R scripts used in the 
 
 ## Datasets
 Information file for datasets
--	Dunnet_SequencingFileNames.txt contains a list of all the raw and processed sequencing files available in this repository. The file name in the “Raw data file” column pairs with the file name in the “Processed data file” column.
+-	Dunnet_SequencingFileNames.txt contains a list of all the raw and processed sequencing files in this repository. The file name in the “Raw data file” column pairs with the file name in the “Processed data file” column.
 
-These are the raw and processed sequencing files for various amplicon sequencing analyses.
+The raw and processed sequencing files can be found in the following folders:
 -	Folder: Raw_Files
 -	Folder: Bismark_Methylation_Extraction_Data_Files
 
