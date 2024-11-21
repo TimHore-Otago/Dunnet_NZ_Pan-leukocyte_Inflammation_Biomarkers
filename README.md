@@ -7,7 +7,7 @@ Information file for datasets
 
 These are the raw and processed sequencing files for various amplicon sequencing analyses.
 -	Folder: Raw_Files
--	Folder: Processed_Files
+-	Folder: Bismark_Methylation_Extraction_Data_Files
 
 ## Scripts
 For each script to run correctly, the directory input and output locations must be edited within the script itself
