@@ -3,11 +3,11 @@ This repository contains datasets (raw and processed) and R scripts used in the 
 
 ## Datasets
 Information file for datasets
-•	Dunnet_SequencingFileNames.txt contains a list of all the raw and processed sequencing files available in this repository. The file name in the “Raw data file” column pairs with the file name in the “Processed data file” column.
+-	Dunnet_SequencingFileNames.txt contains a list of all the raw and processed sequencing files available in this repository. The file name in the “Raw data file” column pairs with the file name in the “Processed data file” column.
 
 These are the raw and processed sequencing files for various amplicon sequencing analyses.
-•	Folder: Raw_Files
-•	Folder: Processed_Files
+-	Folder: Raw_Files
+-	Folder: Processed_Files
 
 ## Scripts
 For each script to run correctly, the directory input and output locations must be edited within the script itself
