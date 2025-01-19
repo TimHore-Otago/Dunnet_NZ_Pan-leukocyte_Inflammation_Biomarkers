@@ -9,7 +9,7 @@ library(randomForest)
 
 ## Input files are text files produced by the bismark methylation extractor.
 # Input condition one data
-samfile <- read.delim("/path/to/condition/one/file.txt", sep = '', skip = 1, header = F)
+samfile <- read.delim("~/path/to/input/file1.txt", sep = '', skip = 1, header = F)
 colnames(samfile) <- c("read","strand","chr","start","meth")
 data_frame = dcast(data = samfile,formula = read~start,value.var = "meth")
 rownames(data_frame) <- data_frame$read
@@ -21,7 +21,7 @@ colnames(meth) <- c("Methylaed CpGs")
 meth$condition <- 0
 
 # Input condition two data
-samfile2 <- read.delim("/path/to/condition/two/file.txt", sep = '', skip = 1, header = F)
+samfile2 <- read.delim("~/path/to/input/file2.txt", sep = '', skip = 1, header = F)
 colnames(samfile2) <- c("read","strand","chr","start","meth")
 data_frame2 = dcast(data = samfile2,formula = read~start,value.var = "meth")
 rownames(data_frame2) <- data_frame2$read
@@ -40,8 +40,18 @@ df <- combined_data[order(combined_data$`Methylaed CpGs`),]
 #variables as numerical
 `Methylated CpGs` <- as.numeric(df$`Methylaed CpGs`)
 condition <- as.numeric(df$condition)
+par(mar = c(6, 5, 4, 2))
 #plot variables and produce logistic regression curve
-plot(x=`Methylated CpGs`, y=condition)
+plot(x=jitter(`Methylated CpGs`, amount = 0.1), 
+     y = jitter(condition, amount = 0.0),       
+     pch = 1,                                   
+     cex = 1.5,
+     col = adjustcolor("black", alpha.f = 1.0),
+     xlab = "Methylated CpGs",                
+     ylab = "Probablity of of being leukocyte derived",
+     cex.lab = 1.5,
+     cex.axis = 1.5
+)
 glm.fit = glm(condition ~ `Methylated CpGs`, family = binomial)
 lines(`Methylated CpGs`, glm.fit$fitted.values)
 #plot ROC curve
